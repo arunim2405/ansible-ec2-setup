@@ -1,0 +1,16 @@
+plugin: aws_ec2
+regions:
+  - eu-central-1
+aws_profile: sg-custom
+
+filters:
+  tag:Name: sg-custom
+
+keyed_groups:
+  - key: tags.Name
+    prefix: ec2
+
+hostnames:
+  - public-ip-address
+
+strict: False
